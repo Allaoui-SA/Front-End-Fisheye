@@ -26,6 +26,20 @@
         <button tabindex="0" onclick="displayModal()" class="contact_button">Contactez-moi</button>
         <img src="" alt="image-profile-photographe">
       </div>
+      <div class="photograph-content">
+        <form class="sorting">
+          <label for="sort">Trier par</label>
+          <select id="sort">
+            <option>Popularité</option>
+            <option>Date</option>
+            <option>Titre</option>
+          </select>
+        </form>
+        <div class="content-gallery">
+          
+          
+        </div>
+      </div>
     </main>
     <div id="contact_modal" class="modal-off">
 			<div class="modal">
@@ -33,7 +47,7 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" alt="" onclick="closeModal()" />
         </header>
-				<form method="post" action="">
+				<form class="form_modal" method="post" action="">
 					<div>
             <!-- NOM -->
 						<label for="firstname">Prénom</label>
@@ -54,8 +68,11 @@
 		</div>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/pages/photographerHeader.js"></script>
+    <script src="/scripts/pages/photographerContent.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
     <script src="scripts/api/Api.js"></script>
     <script src="scripts/App.js"></script>
+    <script src="scripts/Content.js"></script>
+
   </body>
 </html>
