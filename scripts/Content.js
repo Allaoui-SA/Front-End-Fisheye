@@ -10,6 +10,7 @@ class Content {
         
         let galleryLightbox = []
 
+        //afficher les médias
         medias.forEach(media => {
             if(media.image==null) {
                 galleryLightbox.push(media.video)
@@ -18,9 +19,14 @@ class Content {
             }
             const Template = new PhotographerContent(photographer, media)            
             Template.createPhotographerContent()       
+            
+        })
 
-        })        
-        localStorage.setItem('links', JSON.stringify(galleryLightbox))
+        //gérer les likes 
+        const LikesHandler = new PhotographerContent(photographer, medias)            
+        LikesHandler.likes()     
+         
+        // localStorage.setItem('links', JSON.stringify(galleryLightbox))
         
     }
 

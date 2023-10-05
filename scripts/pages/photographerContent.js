@@ -29,12 +29,47 @@ class PhotographerContent extends PhotographerHeader {
                 </a>
                 <div class="gallery-flex">
                     <p class="title">${this._media.title}</p>
-                    <p>${this._media.likes} <i class="likes fa-solid fa-heart" aria-label="likes"></i></p>
+                    <div class="like--container like__empty">
+                        <p>${this._media.likes}</p>
+                        <i class="like__icon fa-solid fa-heart" aria-label="likes"></i>
+                    </div>
                 </div>
             </div>
-        ` 
+        `
         $content.innerHTML += photographerContent
         return $content
+    }
+    
+    //gérer les likes
+    async likes() {
+        let likes = document.querySelectorAll('.like--container')
+        const likesArray = Array.from(likes)
+        
+        likesArray.forEach((element) => {
+            element.addEventListener('click', () => {
+                const totalLikes = document.getElementById('total-likes').querySelector("p")
+                
+                if(element.classList.contains('like__empty')) {
+
+                    element.classList.remove('like__empty')
+                    element.classList.add('like__fill')
+                    
+                    const likePlus = element.querySelector("p")
+                    likePlus.textContent = parseInt(likePlus.textContent)+1
+                    totalLikes.textContent = parseInt(totalLikes.textContent)+1
+                
+                }else if(element.classList.contains('like__fill')) {
+                    
+                    element.classList.remove('like__fill')
+                    element.classList.add('like__empty')
+                    
+                    const likeMinus = element.querySelector("p")
+                    totalLikes.textContent = parseInt(totalLikes.textContent)-1
+                
+                }
+            })
+            // console.log(element.textContent)
+        })
     }
 
 }
