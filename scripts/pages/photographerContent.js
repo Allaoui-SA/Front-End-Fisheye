@@ -57,13 +57,14 @@ class PhotographerContent extends PhotographerHeader {
                     const likePlus = element.querySelector("p")
                     likePlus.textContent = parseInt(likePlus.textContent)+1
                     totalLikes.textContent = parseInt(totalLikes.textContent)+1
-                
+                    
                 }else if(element.classList.contains('like__fill')) {
                     
                     element.classList.remove('like__fill')
                     element.classList.add('like__empty')
                     
                     const likeMinus = element.querySelector("p")
+                    likeMinus.textContent = parseInt(likeMinus.textContent)-1
                     totalLikes.textContent = parseInt(totalLikes.textContent)-1
                 
                 }
