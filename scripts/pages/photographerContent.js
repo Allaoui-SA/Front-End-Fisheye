@@ -44,11 +44,14 @@ class PhotographerContent extends PhotographerHeader {
     async likes() {
         let likes = document.querySelectorAll('.like--container')
         const likesArray = Array.from(likes)
+        const totalLikes = document.getElementById('total-likes').querySelector("p")
+        let allLikes = 0
+
         
         likesArray.forEach((element) => {
+
+            allLikes += parseInt(element.textContent)
             element.addEventListener('click', () => {
-                const totalLikes = document.getElementById('total-likes').querySelector("p")
-                
                 if(element.classList.contains('like__empty')) {
 
                     element.classList.remove('like__empty')
@@ -69,8 +72,9 @@ class PhotographerContent extends PhotographerHeader {
                 
                 }
             })
-            // console.log(element.textContent)
         })
+        // console.log(allLikes)
+        totalLikes.innerHTML = allLikes
     }
 
 }
