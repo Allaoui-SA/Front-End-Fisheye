@@ -27,14 +27,18 @@
         <img src="" alt="image-profile-photographe">
       </div>
       <div class="photograph-content">
+
+
         <form class="sorting">
-          <label for="sort">Trier par</label>
-          <select id="sort">
-            <option>Popularité</option>
-            <option>Date</option>
-            <option>Titre</option>
+          <label for="sort-select">Trier par :</label>
+          <select id="sort-select">
+            <option value="likes">Likes</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
           </select>
         </form>
+
+        
         <div class="content-gallery">
           
           
@@ -54,7 +58,7 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" alt="" onclick="closeModal()" />
         </header>
-				<form class="form_modal" method="post" action="">
+				<form class="form_modal">
 					<div>
             <!-- NOM -->
 						<label for="firstname">Prénom</label>
@@ -69,7 +73,7 @@
 						<label for="message">Message</label>
 						<textarea rows="4" cols="50" id="message"></textarea>
 					</div>
-          <button class="contact_button" type="submit">Envoyer</button>
+          <button class="contact_button" id="contact_submit" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
@@ -80,6 +84,7 @@
     <script src="scripts/App.js"></script>
     <script src="scripts/Content.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/sorting.js"></script>
 
   </body>
 </html>
