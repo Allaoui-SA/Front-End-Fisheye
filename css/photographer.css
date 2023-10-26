@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
+    top: 0;
     background: #FAFAFA;
 }
 .lightbox-off {
@@ -56,18 +57,21 @@
 }
 .lightbox-gallery i.fa-arrow-left {
     top: calc(50% - 1rem);
-    left: -5%;
+    left: 5%;
 }
 .lightbox-gallery i.fa-arrow-right {
     top: calc(50% - 1rem);
-    right: -5%;
+    right: 5%;
 }
 
-.lightbox-content {
+.lightbox-media {
     position: relative;
 }
-.lightbox-content img, .lightbox-content video {
+.lightbox-media img {
     max-height: 80vh;   
+}
+.lightbox-media video {
+    max-height: 70vh;   
 }
 
 header {

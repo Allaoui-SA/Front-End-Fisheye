@@ -6,10 +6,8 @@ class Content {
         const medias = await this.mediasApi.getMedias()
         let photographer = await this.mediasApi.getPhotographerById(photographerId)
 
-        console.log(sortBy)
-
-
-        // TEST SORTING
+        // console.log(medias)
+        // SORTING
         if (sortBy === "likes") {
             medias.sort((a, b) => {
                 return b.likes - a.likes;
@@ -25,8 +23,7 @@ class Content {
                 return a.title > b.title ? 1 : -1;
             });
         }
-        // TEST SORTING
-
+        // END OF SORTING
 
         let galleryLightbox = []
 
@@ -43,8 +40,9 @@ class Content {
         })
 
         //gérer les likes 
-        const LikesHandler = new PhotographerContent(photographer, medias)            
-        LikesHandler.likes()     
+        const Template = new PhotographerContent(photographer, medias)            
+        Template.likes()   
+        Template.lightbox()
          
         // localStorage.setItem('links', JSON.stringify(galleryLightbox))
         
