@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye</title>
-  </head>
-  <body>
-    <header role="banner">
-        <a href="#"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" /></a>
-        <h1>Nos photographes</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les petits plats</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo"><img src="assets/images/logo-petits-plats.png" alt="logo les petits plats"></div>
+        <form>
+            <h1 class="header__h1">Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
+            <div class="search-bar">
+                <input type="text" class="search-bar__input" placeholder="Rechercher une recette, un ingrédient, ...">
+                <button type="submit" class="search-bar__button d-flex">
+                    <img src="assets/icons/search-icon.png" alt="Search Icon">
+                </button>
+            </div>
+        </form>
     </header>
-    <main id="main">
-      <nav id="photographer_section" role="navigation">
-        
-      </nav>
+    <main class="main">
+        <form class="main__form d-flex">
+            <div class="dropdowns">
+                <select class="dropdown">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <select class="dropdown">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <select class="dropdown">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+            <h2>1500 recettes</h2>
+        </form>
+        <div class="main--content">
+            <div class="main--card">
+                <img class="main--card__img" src="assets/photos/Recette01.jpg" alt="">
+                <section class="main--card__text">
+                    <h3>Limonade de Coco</h3>
+                    <section>
+                        <h4>recette</h4>
+                        <p>Mettre les glaçons à votre goût dans le blender, Ajouter le lait  la crème de coco, le jus de 2 citrons et le sucre ensemble. Mixer jusqu'à obtenir la consistance désirée.</p>
+                        <h4></h4>
+                    </section>
+                    <section>
+                        
+                    </section>
+                    <ul>
+                        <li>Lait de coco <br><span>400ml</span></li>
+                        <li>Jus de citron <br><span>2</span></li>
+                        <li>Crème de coco <br><span>4 cuillères</span></li>
+                        <li>Sucre <br><span>20g</span></li>
+                        <li>Glaçons <br><span>2</span></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </main>
-    
-    <script src="scripts/pages/PhotographerCard.js"></script>
-    <script src="scripts/api/Api.js"></script>
-    <script src="scripts/App.js"></script>
-  </body>
+</body>
 </html>
